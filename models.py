@@ -6,9 +6,9 @@ import torch.nn.functional as F
 #from timm.models.vision_transformer import VisionTransformer, _cfg
 #from timm.models.registry import register_model
 #from timm.models.layers import trunc_normal_
-from functools import partial
-#from models_new import Encoder
-#from se_module import SELayer
+# from functools import partial
+# from models_new import Encoder
+from se_module import SELayer
 
 class ResNetBlock(nn.Module):
     def __init__(self, in_depth, depth, first=False):

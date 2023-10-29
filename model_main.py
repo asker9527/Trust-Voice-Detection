@@ -10,8 +10,8 @@ import numpy as np
 from torch import Tensor
 from torch.utils.data import DataLoader
 from torchvision import transforms
-#import librosa
-from torchstat import stat
+import librosa
+# from torchstat import stat
 import torch
 from torch import nn
 from tensorboardX import SummaryWriter
@@ -257,6 +257,7 @@ if __name__ == '__main__':
     dev_set = data_utils.ASVDataset(is_train=False, is_logical=is_logical,
                                     transform=transforms,
                                     feature_name=args.features, is_eval=args.is_eval, eval_part=args.eval_part)
+    
     dev_loader = DataLoader(dev_set, batch_size=args.batch_size, shuffle=True)
     model = model_cls().to(device)
 
